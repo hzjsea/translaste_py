@@ -14,7 +14,7 @@ import click
 @click.command()
 @click.option("-s")
 def md(s: str):
-    t = Translate()
+    t = Translate("/Users/alpaca/gitProject/pythonnnnnnn/translaste_py")
     click.echo(t.parse_cmd_keywards(s))
 
 
@@ -26,7 +26,6 @@ class Translate(object):
             self.path = path
         self.shell_cmd_path = self.path + "/translate-shell/translate"
         pass
-
 
     def script(self, keywards, flag):
         p = subprocess.run([f"{self.shell_cmd_path}", f"{flag}", keywards], capture_output=True)
@@ -44,6 +43,7 @@ class Translate(object):
             if '\u4e00' <= _char <= '\u9fa5':
                 return ":en"
         return ":zh"
+
 
 if __name__ == '__main__':
     t = Translate("/Users/alpaca/gitProject/pythonnnnnnn/translaste_py")
