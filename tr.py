@@ -19,8 +19,10 @@ def md(s: str):
 
 
 class Translate(object):
-    def __init__(self):
-        self.shell_cmd_path = os.getcwd() + "/translate-shell/translate"
+    def __init__(self, path: str):
+        if path is None:
+            path = os.getcwd()
+        self.shell_cmd_path = self.path + "/translate-shell/translate"
         pass
 
 
@@ -42,5 +44,5 @@ class Translate(object):
         return ":zh"
 
 if __name__ == '__main__':
-    t = Translate()
+    t = Translate("/Users/alpaca/gitProject/pythonnnnnnn/translaste_py")
     print(md())
