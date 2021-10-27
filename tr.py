@@ -21,7 +21,9 @@ def md(s: str):
 class Translate(object):
     def __init__(self, path: str):
         if path is None:
-            path = os.getcwd()
+            self.path = os.getcwd()
+        else:
+            self.path = path
         self.shell_cmd_path = self.path + "/translate-shell/translate"
         pass
 
